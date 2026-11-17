@@ -15,5 +15,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rbPlayer.AddForce(0.0f, 0.0f, speed);
-    }
+        if(Input.GetKey("d"))
+		{
+			rbPlayer.AddForce(speed, 0.0f, 0.0f);
+		}
+        if (Input.GetKey("q"))
+		{
+			rbPlayer.AddForce(-speed, 0.0f, 0.0f);
+		}
+
+	}
 }

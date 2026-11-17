@@ -4650,7 +4650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   rbPlayer: {fileID: 1705133634}
-  speed: 12
+  speed: 50
 --- !u!4 &1705133638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3659140983634492443, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
