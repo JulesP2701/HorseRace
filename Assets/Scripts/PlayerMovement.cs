@@ -3,10 +3,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody rbPlayer;
-    [SerializeField] private float speed = 3.0f;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float ForwardForce = 3.0f;
+	[SerializeField] private float sidewaysForce = 3.0f;
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
     {
         
     }
@@ -14,14 +15,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rbPlayer.AddForce(0.0f, 0.0f, speed);
-        if(Input.GetKey("d"))
+        rbPlayer.AddForce(0.0f, 0.0f, ForwardForce);
+        if(Input.GetKey(KeyCode.D))
 		{
-			rbPlayer.AddForce(speed, 0.0f, 0.0f);
+			rbPlayer.AddForce(sidewaysForce, 0.0f, 0.0f, ForceMode.VelocityChange);
 		}
-        if (Input.GetKey("q"))
+        if (Input.GetKey(KeyCode.Q))
 		{
-			rbPlayer.AddForce(-speed, 0.0f, 0.0f);
+			rbPlayer.AddForce(-sidewaysForce, 0.0f, 0.0f, ForceMode.VelocityChange);
 		}
 
 	}
